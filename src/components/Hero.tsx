@@ -1,13 +1,7 @@
 "use client";
 
-import dynamic from "next/dynamic";
 import { useLanguage } from "@/lib/LanguageContext";
 import { translations, t } from "@/lib/translations";
-
-const LottieAnimation = dynamic(() => import("./LottieAnimation"), {
-  ssr: false,
-  loading: () => <div className="w-full h-full" />,
-});
 
 export default function Hero() {
   const { locale } = useLanguage();
@@ -114,11 +108,7 @@ export default function Hero() {
             <div className="relative w-full max-w-lg mx-auto">
               {/* Glow behind */}
               <div className="absolute inset-0 bg-gradient-to-r from-brand/20 to-rose-500/10 rounded-3xl blur-3xl" />
-              <LottieAnimation
-                src="https://lottie.host/1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d/security-shield.lottie"
-                className="relative z-10 w-full"
-              />
-              {/* Fallback visual */}
+              {/* Hero visual: security score card */}
               <div className="relative z-10 flex items-center justify-center">
                 <div className="relative">
                   <div className="w-64 h-64 sm:w-80 sm:h-80 mx-auto relative">
